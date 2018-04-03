@@ -1,0 +1,8 @@
+#fb1<-read.csv("http://realchart.finance.yahoo.com/table.csv?s=FB&d=10&e=5&f=2014&g=d&a=11&b=12&c=2013&ignore=.csv")
+fb1<-read.csv(file.choose())
+aapl1<-read.csv(file.choose())
+par(bg="cornsilk")
+plot(aapl1$Adj.Close, col="blue", type="o", ylim=c(0,100), xlab="Days", ylab="Price" )
+lines(fb1$Adj.Close, type="o", pch=22, lty=2, col="red")
+legend("topright", inset=.05, c("Apple","Facebook"), fill=c("blue","red"), horiz=TRUE)
+hist(aapl1$Adj.Close, col=rainbow(8))
